@@ -5,6 +5,7 @@
     using EFT.InventoryLogic;
     using static EFT.SkillManager;
     using EFT;
+    using EFT.Hideout.ShootingRange;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     public class AleLite : BaseUnityPlugin
@@ -80,5 +81,21 @@
             //    }
             //}
         }
+
+        //[HarmonyPatch(typeof(HideoutTargetBallisticCollider), nameof(HideoutTargetBallisticCollider.ApplyHit))]
+        //public class HideoutTargetBallisticCollider_ApplyHit
+        //{
+        //    [HarmonyPostfix]
+        //    public static void Postfix(DamageInfoStruct damageInfo, HideoutTargetBallisticCollider __instance)
+        //    {
+        //        if (damageInfo.Player?.iPlayer is Player player)
+        //        {
+        //            if (damageInfo.Weapon != null )
+        //            {
+        //               player.ExecuteShotSkill(damageInfo.Weapon);
+        //            }
+        //        }
+        //    }
+        //}
     }
 }
